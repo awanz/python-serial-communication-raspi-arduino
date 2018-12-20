@@ -14,4 +14,4 @@ with open('hasil.csv', 'w', newline='') as f:
         my_string = serialstring.decode('utf-8')
         result = [x.strip() for x in my_string.split(',')]
         print(result)
-        thewriter.writerow({'column1': result[0], 'column2': result[1], 'column3': result[2], 'column4': result[3]})
+        thewriter.writerow({'Pulse Kanan': result[0], 'Pulse Kiri': result[1], 'Jarak Kanan': result[2], 'Jarak Kiri': result[3]})

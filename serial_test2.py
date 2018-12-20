@@ -1,5 +1,12 @@
 import serial
-ser = serial.Serial('com10', 9600)
-ser.write(b'3')
-ser.write(b'5')
-ser.write(b'7')
+import os
+from time import sleep
+
+ser = serial.Serial('/dev/ttyACM0', 9600)
+while True:
+	ser.write(b'1')
+	serialstring = ser.readline()
+	print(serialstring)
+	sleep(2)
+	ser.write(b'0')
+	sleep(2)
