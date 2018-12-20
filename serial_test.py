@@ -10,6 +10,6 @@ with open('hasil.csv', 'w', newline='') as f:
     thewriter.writeheader()
     while True:
         #s[0] = str(int(ser.readline(), 16))
-        serialstring = "hai"
-        print(serialstring)
+        serialstring = ser.readline()
+        print(serialstring.decode('utf-8'))
         thewriter.writerow({'column1': s[0], 'column2': "tes"})
