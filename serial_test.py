@@ -5,7 +5,7 @@ ser = serial.Serial('/dev/ttyACM0',9600)
 s = [0,1]
 a = 0;
 with open('hasil.csv', 'w', newline='') as f:
-    filednames = ['column1', 'column2']
+    filednames = ['Pulse Kanan', 'Pulse Kiri', 'Jarak Kanan', 'Jarak Kiri']
     thewriter = csv.DictWriter(f, fieldnames=filednames)
     thewriter.writeheader()
     while True:
@@ -14,4 +14,4 @@ with open('hasil.csv', 'w', newline='') as f:
         my_string = serialstring.decode('utf-8')
         result = [x.strip() for x in my_string.split(',')]
         print(result)
-        thewriter.writerow({'column1': s[0], 'column2': "tes"})
+        thewriter.writerow({'column1': result[0], 'column2': result[1], 'column3': result[2], 'column4': result[3]})
